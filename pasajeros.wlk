@@ -7,7 +7,7 @@ object neo {
             true
   }
 
-  method saltarDeLaNave() {
+  method saltar() {
         energia = energia / 2
   }
 
@@ -27,7 +27,7 @@ object morfeo {
             false
   }
 
-  method saltarDeLaNave() {
+  method saltar() {
         estaCansado = !estaCansado
         vitalidad = vitalidad - 1
   }
@@ -51,6 +51,6 @@ object trynity {
                 0
     }
 
-    method saltarDeLaNave() {}
+    method saltar() {}
     
 }

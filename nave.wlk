@@ -43,4 +43,45 @@ object nave {
             pasajeros.forEach({c => c.bajarseDeLaNave()})
             pasajeros.clear()
     }
+
+    method estaEquilibradaEnVitalidad() {
+      return
+            self.pasajeroDeMasVitalidad().vitalidad() <= self.pasajeroDeMenorVitalidad().vitalidad() * 2
+    }
+
+    method pasajeroDeMenorVitalidad() {
+      return
+            pasajeros.min({c => c.vitalidad()})
+    }
+
+    method saltan(unaLista) {
+      unaLista.forEach({c => c.saltar()})
+    }
+
+    method laNaveAcelera() {
+            self.saltan(self.noElegidos())
+    }
+
+    method noElegidos() {
+        return
+              pasajeros.filter({c => not c.esElegido()})
+    }
+
+    method vitalidadesDePasajeros() {
+      return
+            pasajeros.map({p => p.vitalidad()})
+    }
+
+    method ordenarVitalidadesDeMenorAMayor() {
+      return
+            pasajeros.sortBy({
+              p1,p2 => 
+              p1.vitalidad() < p2.vitalidad()
+            })
+    }
+
+    method cantidadElegidosEnLaNave() {
+      return
+            pasajeros.count({p => p.esElegido()})
+    }
 }
